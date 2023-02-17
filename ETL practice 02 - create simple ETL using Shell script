@@ -1,0 +1,28 @@
+Exercise extended from IBM Skills Network - ETL and Data Pipelines with Shell, Airflow and Kafka - Hands-On Lab: ETL using Shell Scripts
+For detailed explanation, please visit: 
+https://lhy688.wordpress.com/blog/
+Blog post "ETL practice 02 - create simple ETL using Shell script"
+
+csv2db.sh:
+# Extract phase 
+echo "Extracting data"
+cut -d":" -f1,3,6 /etc/passwd > extracted-data.txt
+
+# Transform phase
+echo "Transforming data"
+tr ":" "," < extracted-data.txt > transformed-data.csv
+
+# Load phase
+echo "Loading data"
+echo "\c template1;\COPY users  FROM '/home/project/transformed-data.csv' DELIMITERS ',' CSV;" | psql --username=postgres --host=localhost
+
+
+running bash file:
+bash csv2db.sh
+
+verifying file is created:
+cat extracted-data.txt
+cat transformed-data.csv
+
+check users is populated with data: 
+echo '\c template1; \\SELECT * from users;' | psql --username=postgres --host=localhost
