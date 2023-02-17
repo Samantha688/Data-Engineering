@@ -1,0 +1,39 @@
+Exercise extended from IBM Skills Network - ETL and Data Pipelines with Shell, Airflow and Kafka - Hands-On Lab: ETL using Shell Scripts
+For detailed explanation, please visit: 
+https://lhy688.wordpress.com/blog/
+Blog post "ETL practice 01 - basic scripting commands"
+
+Basic commands:
+echo "apple" | cut -c1-3 
+
+echo "apple" | cut -c4-5 
+
+echo "apple" | cut -c1,5
+
+cut -d":" -f3 /etc/passwd
+
+cut -d":" -f3,6 /etc/passwd
+
+cut -d":" -f3-6 /etc/passwd
+
+echo "Apple Tree" | tr "[a-z]" "[A-Z]" 
+
+echo "Apple Tree" | tr "[A-Z]" "[a-z]" 
+
+echo "Apple Tree" | tr "[:lower:]" "[:upper:]" 
+
+ps | tr -s " " 
+
+ps | tr -s "[:space:]"
+
+echo "Hello 12345abc" | tr -d "[:digit:]"
+
+start_postgres
+
+psql --username=postgre --host=localhost
+
+\c template1
+
+create table students(name varchar(50), id int, gender varchar(50));
+
+\q
