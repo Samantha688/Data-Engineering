@@ -1,32 +1,32 @@
-ercise extended from IBM Skills Network - ETL and Data Pipelines with Shell, Airflow and Kafka - Hands-On Lab: ETL using Shell Scripts
- For detailed explanation, please visit: 
- https://lhy688.wordpress.com/blog/
- Blog post "ETL practice 05 - Apache Kafka basics"
+Exercise extended from IBM Skills Network - ETL and Data Pipelines with Shell, Airflow and Kafka - Hands-On Lab: ETL using Shell Scripts
+For detailed explanation, please visit: 
+https://lhy688.wordpress.com/blog/
+Blog post "ETL practice 05 - Apache Kafka basics"
 
- Download Kafka: 
- wget https://archive.apache.org/dist/kafka/2.8.0/kafka_2.12-2.8.0.tgz
+Download Kafka: 
+wget https://archive.apache.org/dist/kafka/2.8.0/kafka_2.12-2.8.0.tgz
 
- Extract Kafka from the zip file:
- tar -xzf kafka_2.12-2.8.0.tgz
+Extract Kafka from the zip file:
+tar -xzf kafka_2.12-2.8.0.tgz
 
- Start Zookeeper server:
- cd kafka_2.12-2.8.0
- bin/zookeeper-server-start.sh config/zookeeper.properties
+Start Zookeeper server:
+cd kafka_2.12-2.8.0
+bin/zookeeper-server-start.sh config/zookeeper.properties
 
- Start Kafka broker service: 
- cd kafka_2.12-2.8.0
- bin/kafka-server-start.sh config/server.properties
+Start Kafka broker service: 
+cd kafka_2.12-2.8.0
+bin/kafka-server-start.sh config/server.properties
 
- Create a topic called 'news'
- cd kafka_2.12-2.8.0
- bin/kafka-topics.sh --create --topic news --bootstrap-server localhost:9092
+Create a topic called 'news'
+cd kafka_2.12-2.8.0
+bin/kafka-topics.sh --create --topic news --bootstrap-server localhost:9092
 
- Start a producer:
- bin/kafka-console-producer.sh --topic news --bootstrap-server localhost:9092
+Start a producer:
+bin/kafka-console-producer.sh --topic news --bootstrap-server localhost:9092
 
- Start a consumer:
- cd kafka_2.12-2.8.0
- bin/kafka-console-consumer.sh --topic news --from-beginning --bootstrap-server localhost:9092
+Start a consumer:
+cd kafka_2.12-2.8.0
+bin/kafka-console-consumer.sh --topic news --from-beginning --bootstrap-server localhost:9092
 
- Delete installation file:
- rm kafka_2.12-2.8.0.tgz
+Delete installation file:
+rm kafka_2.12-2.8.0.tgz
